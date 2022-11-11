@@ -6,6 +6,11 @@ remote_file '/home/ubuntu/apache-tomcat-10.0.20.tar.gz' do
     action :create
 end
 
+directory '/opt/tomcat' do
+    mode '0755'
+    action :create
+end
+
 
 execute 'i want extract tar file' do
     command 'sudo tar xzvf /home/ubuntu/apache-tomcat-10.0.20.tar.gz -C /opt/tomcat --strip-components=1'
